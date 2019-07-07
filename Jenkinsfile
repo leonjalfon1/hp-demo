@@ -11,7 +11,12 @@ pipeline {
         sh 'echo npm run test'
       }
     }
-    stage('build') {
+    stage('input') {
+      steps {
+        input 'build?'
+      }
+    }
+    stage('builds') {
       steps {
         sh 'echo npm run build'
       }
