@@ -3,22 +3,22 @@ pipeline {
   stages {
     stage('install') {
       steps {
-        sh 'npm install'
+        sh 'echo npm install'
       }
     }
     stage('test') {
       steps {
-        sh 'npm run test'
+        sh 'echo npm run test'
       }
     }
-    stage('build') {
+    stage('input') {
       steps {
-        sh 'npm run build'
+        input 'build?'
       }
     }
-    stage('Publish') {
+    stage('builds') {
       steps {
-        archiveArtifacts '*.zip'
+        sh 'echo npm run build'
       }
     }
   }
